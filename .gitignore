@@ -127,3 +127,5 @@ dmypy.json
 # Extras
 Submission.csv
 CompPLots.png
+metrics.txt
+classifier.py
