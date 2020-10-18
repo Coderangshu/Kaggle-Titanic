@@ -16,8 +16,11 @@ jobs:
           jupyter nbconvert --to script classifier.ipynb
           python classifier.py
           
-          cat metrics.txt
-          
           # Write your CML report
-          #cat results.txt >> report.md
-          #cml-send-comment report.md
+          echo ## Model Metrics > report.md
+          cat metrics.txt >> report.md
+          
+          echo ## Data Viz >> report.md
+          cml-publish ComPLots.png --md >> report.md
+          
+          cml-send-comment report.md
